@@ -25,7 +25,7 @@ class AutomaticModelDocblocksServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->publishes([
                 __DIR__ . '/../config/automatic-model-docblocks.php' => config_path('automatic-model-docblocks.php'),
-            ], 'automatic-model-docblocks.config');
+            ], 'automatic-model-docblocks');
             if (Config::get('automatic-model-docblocks.enabled', false) &&
                 version_compare($this->app->version(), '5.8.16')) {
                 DB::listen(function (QueryExecuted $query) {
